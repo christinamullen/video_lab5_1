@@ -1,0 +1,14 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: sans-serif;
+    background: rgb(240, 229, 204);
+  }
+  
+  h1, h2 {
+      text-align:center;
+  }
+   
+  
