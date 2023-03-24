@@ -42,6 +42,37 @@
             Feed your head</p>
 
     </video>
+
+<div id="controls">
+				<form id="video_form">
+					<fieldset>
+						<legend>Playback controls</legend>
+						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
+						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
+						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
+                        <input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
+						
+						<input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
+                        <fieldset>
+							<legend>Go to</legend>
+                            <!-- Intro -->
+                            <input type="button" id="intro" onclick="seekVideo(vid, 0)" value="Intro" />
+                            <!-- Skip Intro -->
+                            <input type="button" id="skipIntro" onclick="seekVideo(vid, 57)" value="Skip Intro" />
+                            <!-- Chorus -->
+                            <input type="button" id="chorus" onclick="seekVideo(vid, 14)" value="Chorus" />
+						
+						</fieldset>
+					</fieldset>
+					<fieldset>
+						<legend>Load new Media</legend>
+						<select id="video_select">
+							<option>Select a video to play...</option>
+							<option value="assets/leverage-a-synergy.mp4">Leverage(mp4)</option>
+							<option value="assets/bunny.mp4">Bunny(mp4)</option>
+						</select>
+					</fieldset>
+
 </body>
 
 </html>
