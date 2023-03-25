@@ -7,16 +7,19 @@ function init() {
     // create a playlist of functions to call at certain moments in the video.
    myCues = [
         { seconds: 10, callback: func1 },//guitar solo
-        { seconds: 38, callback: func2 },//cheshire
-        { seconds: 44, callback: func5 }, //tallAlice
-        { seconds: 55, callback: func7 }, //rabbit
-        { seconds: 63, callback: func7 }, //caterpillar
+        { seconds: 28, callback: func2 },//disclaimer
+        { seconds: 38, callback: func3 },//cheshire
+        { seconds: 45, callback: func4 }, //tallAlice
+        { seconds: 55, callback: func5 }, //rabbit
+        { seconds: 63, callback: func6 }, //caterpillar
         { seconds: 76, callback: func7 }, //bigAlice
-        { seconds: 85, callback: func4 }, //chessAlice
-        { seconds: 91, callback: func7 }, //alice2
-        { seconds: 117, callback: func6 }, //white knight
-        { seconds: 122, callback: func5 }, //queen
-        { seconds: 134, callback: func7 } //cheshire
+        { seconds: 82, callback: func8 }, //chessAlice
+        { seconds: 91, callback: func9 }, //alice2
+        { seconds: 117, callback: funcA }, //white knight
+        { seconds: 122, callback: funcB }, //queen
+        { seconds: 134, callback: func3 }, //cheshire
+        { seconds: 140, callback: func3 } //cheshire
+        
     ];
 
     // setup the cuepoint timer
@@ -42,17 +45,24 @@ function init() {
 
             // reset the cues playlist
             myCues = [
-                { seconds: 27, callback: func1 },
-                { seconds: 9, callback: func2 },
-                { seconds: 15, callback: func3 },
-                { seconds: 25, callback: func6 },
-                { seconds: 37, callback: func2 },
-                { seconds: 50, callback: func5 }
+                { seconds: 10, callback: func1 },//guitar solo
+                { seconds: 28, callback: func2 },//disclaimer
+                { seconds: 38, callback: func3 },//cheshire
+                { seconds: 45, callback: func4 }, //tallAlice
+                { seconds: 55, callback: func5 }, //rabbit
+                { seconds: 63, callback: func6 }, //caterpillar
+                { seconds: 76, callback: func7 }, //bigAlice
+                { seconds: 82, callback: func8 }, //chessAlice
+                { seconds: 91, callback: func9 }, //alice2
+                { seconds: 117, callback: funcA }, //white knight
+                { seconds: 122, callback: funcB }, //queen
+                { seconds: 134, callback: func3 }, //cheshire
+                { seconds: 140, callback: func3 } //cheshire
             ];
             // recreate the cue timer
             cueTimer.setup("vid", myCues);
 
-        } else if(e.target.value == 'vids/Jimi_Hendrix_Experience_All_Along_The_Watchtower.mp4') {
+        } else if(e.target.value == 'vids/bunny.mp4') {
             // if bunny video, empty the myCues array
             // and change the caption texts
             myCues.splice(0, myCues.length);
@@ -73,7 +83,7 @@ function init() {
         "click",
         function (e) {
             e.preventDefault();
-            webvttTranscript("captions/synergy.vtt", display);
+            webvttTranscript("cc/Jefferson_Airplane_White_Rabbit .vtt", display);
     });   
 }
 //the custom callback functions to trigger when a cuepoint is hit.
@@ -89,24 +99,20 @@ function func1() {
 }
 
 function func2() {
-    document.querySelector("#web").src = "vids/cheshireCat.mp4";
-}
-
-function func3() {
     const pop = document.querySelector(".pop");
     pop.innerHTML = "<p>Drugs are bad m'kay</p>";
     pop.classList.toggle("hide");
     setTimeout(() => {
         document.querySelector(".pop").classList.toggle("hide");
     }, 2000);
-    document.querySelector("#vid").style = "outline: 0px solid purple";
-    document.querySelector("#web").src =
-        "imgs/tallAlice.jpg";
+}
+
+function func3() {
+    document.querySelector("#web").src = "vids/cheshireCat.mp4";
 }
 
 function func4() {
-    document.querySelector("#web").src =
-        "imgs/caterpillar.png";
+    document.querySelector("#web").src = "imgs/tallAlice.jpg";
 }
 
 function func5() {
@@ -114,9 +120,21 @@ function func5() {
 }
 
 function func6() {
-    document.querySelector("#web").src = "imgs/whiteKnight.png";
-}
-function func7() {
+    document.querySelector("#web").src = "imgs/caterpillar.png";
     
 }
-
+function func7() {
+    document.querySelector("#web").src = "imgs/bigAlice.png";
+}
+function func8() {
+    document.querySelector("#web").src = "imgs/chessAlice.png";
+}
+function func9() {
+    document.querySelector("#web").src = "imgs/alice2.png";
+}
+function funcA() {
+    document.querySelector("#web").src = "imgs/whiteKnight.png";
+}
+function funcB() {
+    document.querySelector("#web").src = "imgs/queen.png";
+}
