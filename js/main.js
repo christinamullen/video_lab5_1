@@ -6,12 +6,17 @@ function init() {
 
     // create a playlist of functions to call at certain moments in the video.
    myCues = [
-        { seconds: 27, callback: func1 },
-        { seconds: 9, callback: func2 },
-        { seconds: 63, callback: func4 },
+        { seconds: 10, callback: func1 },//guitar solo
+        { seconds: 38, callback: func2 },//cheshire
+        { seconds: 44, callback: func5 }, //tallAlice
+        { seconds: 55, callback: func7 }, //rabbit
+        { seconds: 63, callback: func7 }, //caterpillar
+        { seconds: 76, callback: func7 }, //bigAlice
+        { seconds: 85, callback: func4 }, //chessAlice
+        { seconds: 91, callback: func7 }, //alice2
         { seconds: 117, callback: func6 }, //white knight
-        { seconds: 120, callback: func4 },
-        { seconds: 50, callback: func5 }
+        { seconds: 122, callback: func5 }, //queen
+        { seconds: 134, callback: func7 } //cheshire
     ];
 
     // setup the cuepoint timer
@@ -75,17 +80,16 @@ function init() {
 //You can code up whatever behavior you need in your own callbacks
 
 function func1() {
-    document.querySelector("#vid").style = "outline : 10px solid purple";
-}
-
-function func2() {
     let pop = document.querySelector(".pop");
     pop.innerHTML = "<p>Sick guitar intro</p>";
     document.querySelector(".pop").classList.toggle("hide");
     setTimeout(() => {
         document.querySelector(".pop").classList.toggle("hide");
     }, 2000);
-    document.querySelector("#web").src = "imgs/queen.png";
+}
+
+function func2() {
+    document.querySelector("#web").src = "vids/cheshireCat.mp4";
 }
 
 function func3() {
@@ -106,11 +110,13 @@ function func4() {
 }
 
 function func5() {
-    document.querySelector("#web").src =
-        "imgs/rabbit.png";
+    document.querySelector("#web").src = "imgs/rabbit.png";
 }
 
 function func6() {
     document.querySelector("#web").src = "imgs/whiteKnight.png";
+}
+function func7() {
+    
 }
 
