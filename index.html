@@ -5,11 +5,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="js/video_helpers.js" defer></script>
+    <script src="js/transcript.js" defer></script>
+    <script type="module" src="js/main.js"></script>
     <title>Lab 5 </title>
 </head>
 
 <body>
+    <main id="container">
+
+    <section class="col1">
     <video id="vid" width="352" controls>
         <source src="vids/Jefferson_Airplane_White_Rabbit .mp4" type="video/mp4">
         <source src="vids/Jefferson_Airplane_White_Rabbit .webm" type="video/webm">
@@ -49,8 +55,8 @@
 						<legend>Playback controls</legend>
 						<input type="button" id="play_button" onclick="playVideo(vid)" value="Play" />
 						<input type="button" id="pause_button" onclick="pauseVideo(vid)" value="Pause" />
-						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo mo >" />
-                        <input type=button id="ff" onclick="playRate(vid,2)" value="fast forward >>" />
+						<input type=button id="slo" onclick="playRate(vid,.5)" value="slo >" />
+                        <input type=button id="ff" onclick="playRate(vid,2)" value="ff >>" />
 						
 						<input type=button id="normal" onclick="playRate(vid,1)" value="normal >" />
                         <fieldset>
@@ -68,10 +74,27 @@
 						<legend>Load new Media</legend>
 						<select id="video_select">
 							<option>Select a video to play...</option>
-							<option value="assets/leverage-a-synergy.mp4">Leverage(mp4)</option>
-							<option value="assets/bunny.mp4">Bunny(mp4)</option>
+							<option value="vids/Jimi_Hendrix_Experience_All_Along_The_Watchtower.mp4">Jimi Hendrix - All Along the WatchTower</option>
 						</select>
 					</fieldset>
+                    <div class="pop hide">
+                        <p>Test This!</p>
+                    </div>
+        
+                    <div class="show-captions">
+                        <h3><a id="show-hide" href="#">Show Transcript</a></h3>
+                        <a id="transcript-en" href="#">English</a>
+                        <div id="transcript"></div>
+                    </div>
+        
+                </section>
+        
+        
+                <section class="col2">
+                    <iframe id="web" src="media.html"></iframe>
+                </section>
+        
+            </main>
 
 </body>
 
