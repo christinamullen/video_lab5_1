@@ -84,8 +84,22 @@ function init() {
         function (e) {
             e.preventDefault();
             webvttTranscript("cc/Jefferson_Airplane_White_Rabbit .vtt", display);
-    });   
-}
+    }); 
+    showHide.addEventListener(
+        "click",
+        function (e) {
+            e.preventDefault();
+            webvttTranscript("cc/Jefferson_Airplane_White_Rabbit .vtt", display);
+            if (e.target.innerHTML == "Show Transcript") {
+                e.target.innerHTML = "Hide Transcript";
+                display.style.display = "block";
+            } else {
+                e.target.innerHTML = "Show Transcript";
+                display.style.display = "none";
+            }
+        });
+}  
+
 //the custom callback functions to trigger when a cuepoint is hit.
 //You can code up whatever behavior you need in your own callbacks
 
