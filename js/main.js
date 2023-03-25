@@ -9,7 +9,7 @@ function init() {
         { seconds: 27, callback: func1 },
         { seconds: 9, callback: func2 },
         { seconds: 63, callback: func4 },
-        { seconds: 110, callback: func6 },
+        { seconds: 117, callback: func6 }, //white knight
         { seconds: 120, callback: func4 },
         { seconds: 50, callback: func5 }
     ];
